@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/introduction/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/console/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/find.data/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/load.data/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/script/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/explore/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/vectors/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/mean.median/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/help/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/operator/</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/data_frames/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/mode/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/dispretion/</loc>
+  </url>
+  
+  <url>
+    <loc>/clm/central_limit_theorem/</loc>
+  </url>
+  
+  <url>
+    <loc>/descriptive_statistics/dispretion.factor/</loc>
+  </url>
+  
+  <url>
+    <loc>/clm/</loc>
+  </url>
+  
+  <url>
+    <loc>/bivariate/</loc>
+  </url>
+  
+  <url>
+    <loc>/bivariate/ttest/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/</loc>
+  </url>
+  
+  <url>
+    <loc>/regression_analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/ggplot/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/graphs_categorical/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/graphs_continuous/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/graphs_density_plots/</loc>
+  </url>
+  
+  <url>
+    <loc>/graphs/graphs_ordinal/</loc>
+  </url>
+  
+  <url>
+    <loc>/regression_analysis/regression/</loc>
+  </url>
+  
+  <url>
+    <loc>/regression_analysis/regression-interpretation/</loc>
+  </url>
+  
+  <url>
+    <loc>/regression_analysis/regression-graphs/</loc>
+  </url>
+  
+  <url>
+    <loc>/multivariate_regression/</loc>
+  </url>
+  
+  <url>
+    <loc>/regression_analysis/regression-stargazer/</loc>
+  </url>
+  
+  <url>
+    <loc>/multivariate_regression/prepare-data/</loc>
+  </url>
+  
+  <url>
+    <loc>/multivariate_regression/models/</loc>
+  </url>
+  
+  <url>
+    <loc>/binary_regression/</loc>
+  </url>
+  
+  <url>
+    <loc>/binary_regression/prepare-data_binary/</loc>
+  </url>
+  
+  <url>
+    <loc>/binary_regression/prepare-dependent_variable/</loc>
+  </url>
+  
+  <url>
+    <loc>/binary_regression/models/</loc>
+  </url>
+  
+  <url>
+    <loc>/interaction_term/</loc>
+  </url>
+  
+  <url>
+    <loc>/binary_regression/predicted_probabilities/</loc>
+  </url>
+  
+  <url>
+    <loc>/interaction_term/prepare-data_interaction/</loc>
+  </url>
+  
+  <url>
+    <loc>/interaction_term/prepare-interaction_term/</loc>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/showcase/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/bivariate/correlation/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/_welcome/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

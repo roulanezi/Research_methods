@@ -1,0 +1,38 @@
+baseURL = "/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+
+title = "Quantitative Research methods"
+theme = "hugo-theme-learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  editURL = "https://github.com/roulanezi/POL2028"
+  description = "Quantitative Research Methods-POL-Surrey"
+  author = "Dr. Roula Nezi"
+  showVisitedLinks = false
+  disableBreadcrumb = false
+  disableNextPrev = false
+  math=true
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+math=true
+
+[Languages]
+[Languages.en]
+title = "Quantitative Research Methods"
+weight = 1
+languageName = "English"
+
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bullhorn'></i> Additional Resources"
+url = "/about"
+weight = 10
+
+
+ignoreFiles = ["\\.Rmarkdown$", "_files$", "_cache$"]

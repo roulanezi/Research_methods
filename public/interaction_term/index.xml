@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interaction Terms on Quantitative Research Methods</title>
+    <link>/interaction_term/</link>
+    <description>Recent content in Interaction Terms on Quantitative Research Methods</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/interaction_term/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prepare your variables</title>
+      <link>/interaction_term/prepare-data_interaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/interaction_term/prepare-data_interaction/</guid>
+      <description>For this section we will use the same model as for the multivariate regression analysis. Our dependent variable is attitudes towards immigration immi.jobs.
+Let’s upload our dataset
+library(haven) EVS &amp;lt;- read_dta(&amp;quot;ZA7500_v2-0-0.dta&amp;quot;) View(EVS) Our next step is to keep only the variables we are interesting in:
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union select(EVS, v102, v185, v189,v190, v191, v192, v193, v225,v226,v243_edulvlb,country,v175_cs,v275c_N1) ## # A tibble: 56,368 x 13 ## v102 v185 v189 v190 v191 v192 v193 v225 v226 ## &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl&amp;gt; ## 1 5 8 2 [qui… 1 [ver… 4 [not… 1 [ver… 1 [ver… 1 [mal… 1957 ## 2 3 10 [do … 3 [not… 1 [ver… 3 [not… 2 [qui… 1 [ver… 2 [fem… 1950 ## 3 4 8 4 [not… 1 [ver… 4 [not… 2 [qui… 2 [qui… 1 [mal… 1979 ## 4 6 4 3 [not… 4 [not… 4 [not… 2 [qui… 2 [qui… 2 [fem… 1962 ## 5 5 4 2 [qui… 1 [ver… 2 [qui… 1 [ver… 1 [ver… 2 [fem… 1949 ## 6 6 5 2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [fem… 1975 ## 7 4 8 2 [qui… 2 [qui… 3 [not… 2 [qui… 2 [qui… 1 [mal… 1957 ## 8 6 5 3 [not… 2 [qui… 4 [not… 2 [qui… 2 [qui… 1 [mal… 1981 ## 9 2 10 [do … 3 [not… 3 [not… 3 [not… 3 [not… 1 [ver… 2 [fem… 1955 ## 10 4 8 3 [not… 1 [ver… 4 [not… 1 [ver… 2 [qui… 1 [mal… 1971 ## # … with 56,358 more rows, and 4 more variables: v243_edulvlb &amp;lt;dbl+lbl&amp;gt;, ## # country &amp;lt;dbl+lbl&amp;gt;, v175_cs &amp;lt;dbl+lbl&amp;gt;, v275c_N1 &amp;lt;dbl+lbl&amp;gt; Since we are only interested in Germany we should exclude all other countries from the analysis:</description>
+    </item>
+    
+    <item>
+      <title>Construct and plot your interaction term</title>
+      <link>/interaction_term/prepare-interaction_term/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/interaction_term/prepare-interaction_term/</guid>
+      <description>The \(:\) designates the interaction between two variables. The operator \(*\) designates the interaction between the two variables, plus the main effects. In our model we included an interaction term between two variables born.country and east_west.
+model.1&amp;lt;-lm(immi.jobs~ born.country*east_west+country.ancestry+share.cultr+left_right+education,data=EVS.Germany) summary(model.1) ## ## Call: ## lm(formula = immi.jobs ~ born.country * east_west + country.ancestry + ## share.cultr + left_right + education, data = EVS.Germany) ## ## Residuals: ## &amp;lt;Labelled double&amp;gt;: immigrants take away jobs from [nationality] (Q52A) ## Min 1Q Median 3Q Max ## -5.</description>
+    </item>
+    
+  </channel>
+</rss>

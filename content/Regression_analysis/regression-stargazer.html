@@ -1,0 +1,13 @@
+---
+title: Professional outputs
+weight: 25
+---
+
+
+
+<p>R can make complicated things easy and the package below will save you a lot of time. In your assignments you should have tables similar to the ones you see in official reports and journal publications. The <code>stargazer</code> package will allow to do this without having to update your table multiple times.</p>
+<pre class="r"><code>library(stargazer)
+stargazer(model.1,
+          type=&quot;html&quot;,
+          out=&quot;model_one.doc&quot;)</code></pre>
+<p><strong>Note</strong>: If you are using LATEX instead of Word you don’t have to specify the type and the output (out).</p>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Central Limit Theorem on Documentation for Hugo Learn Theme</title>
+    <link>/central_limit_theorem/</link>
+    <description>Recent content in The Central Limit Theorem on Documentation for Hugo Learn Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/central_limit_theorem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An illustration</title>
+      <link>/central_limit_theorem/central_limit_theorem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/central_limit_theorem/central_limit_theorem/</guid>
+      <description>You now know what the Central Limit Theorem is and why it is so important. You ’ve been recently introduced to RStudio and you are very good at it!
+Let’s examine the Central Limit Theorem using a real world example from the European Value Survey, more specifically a variable describing attitudes towards democracy. In this case, responders were asked whether they believe that “in democracy people choose their leaders in free elections” (v135).</description>
+    </item>
+    
+  </channel>
+</rss>

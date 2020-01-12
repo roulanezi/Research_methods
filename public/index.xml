@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction to Quantitative Research Methods on Quantitative Research Methods</title>
+    <link>/</link>
+    <description>Recent content in Introduction to Quantitative Research Methods on Quantitative Research Methods</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Where to find data</title>
+      <link>/descriptive_statistics/find.data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/find.data/</guid>
+      <description>For example, GESIS-Leibniz Institute of the Social Sciences,houses almost all comparative and German social surveys in Europe. Almost all European countries have a data archive. In the UK we have the UK Data Archive, the UKDA is the national data archive. Additionally, the World Bank and Eurostat, the statistical office of the European Union, provide a wide range of statistics, such as the GDP per Capita, inflation, unemployment, etc.
+To download data you need to register first, this is easy to do, you only need an email address.</description>
+    </item>
+    
+    <item>
+      <title>Explore your dataset</title>
+      <link>/descriptive_statistics/explore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/explore/</guid>
+      <description>Start by creating a folder dedicated to our module. On your computer go to My Documents and create a new folder entitled POLXXXX (XXXX indicates the code of our module). Go back to SurreyLearn and download the dataset in the folder. Go back to RStudio, create a new script file, name it Lab1.R.
+The first two lines of your script file should include the following three lines.
+rm(list = ls()) # This command will clean your workspace setwd(&amp;quot;~/POLXXXX&amp;quot;) # This command will tell RStudio to read and save files at the folder POLXXXX load(&amp;quot;EVS_UK.</description>
+    </item>
+    
+    <item>
+      <title>The mean and the median</title>
+      <link>/descriptive_statistics/mean.median/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/mean.median/</guid>
+      <description>The arithmetic mean, in other words the average, is the most commonly used measure of central tendency. Even without realising it we often calculate the mean, for example we use the mean to calculate how much energy we are using per month.
+We all know how to calculate the mean, by diving the sum of all observations by the total number of observations. Let’s try to do that in R.</description>
+    </item>
+    
+    <item>
+      <title>The mode</title>
+      <link>/descriptive_statistics/mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/mode/</guid>
+      <description>In contrast to the other two measures of central tendency we don’t need a build-in function to calculate the mode. Simply because it is very easy to do it on our own. Think what the mode is…
+To find the value that appears most often, all we have to do is to tabulate the variable we are interested in. This is easily done with the table() function.
+dem_mode&amp;lt;-table(EVS_UK$v142) dem_mode ## ## 1 2 3 4 5 6 7 8 9 10 ## 24 8 11 15 90 66 84 212 223 1031 In simple words the table() function creates a table that tell us the number of people (cases) that fall into each category.</description>
+    </item>
+    
+    <item>
+      <title>Measures of dispersion</title>
+      <link>/descriptive_statistics/dispretion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/dispretion/</guid>
+      <description>The range of a variable is the simplest and easiest measure of dispersion we can calculate, but at the same time is the less reliable one, this is because it depends only upon two values- the two extremes- that quite often are also outliers and are far away from the centre of the distribution.
+The variance is a measure that takes into consideration how far is each value from the mean.</description>
+    </item>
+    
+    <item>
+      <title>An illustration</title>
+      <link>/clm/central_limit_theorem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/clm/central_limit_theorem/</guid>
+      <description>You now know what the Central Limit Theorem is and why it is so important. You ’ve been recently introduced to RStudio and you are very good at it!
+Let’s examine the Central Limit Theorem using a real world example from the European Value Survey, more specifically a variable describing attitudes towards democracy. In this case, responders were asked whether they believe that “in democracy people choose their leaders in free elections” (v135).</description>
+    </item>
+    
+    <item>
+      <title>Categorical variables</title>
+      <link>/descriptive_statistics/dispretion.factor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/descriptive_statistics/dispretion.factor/</guid>
+      <description>Some variables, consist of named categories, e.g. the name of your favourite brand. A category-variable, or a categorical variable refers to any variable that puts individuals into categories. These variables are also called nominal variables. The word nominal comes from Latin (nominalis=of a name), because we are giving names to the values of our variable.
+With categorical variables we want to understand the frequency with which each value appears in our dataset.</description>
+    </item>
+    
+    <item>
+      <title>T-test</title>
+      <link>/bivariate/ttest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/bivariate/ttest/</guid>
+      <description>This time we will use a dataset named midwest.
+Download the dataset from SurreyLearn and load it into RStudio. To load our file we use the load() function. Give a name to your dataset using the assigment operator &amp;lt;-.
+Let’s have a look at the dataset. Alternatively, you can have a look at the codebook- that is the document that comes with the dataset. The codebook describes the contents, structure, and layout of a data collection but it also provides a detailed overview of all variables included in the dataset.</description>
+    </item>
+    
+    <item>
+      <title>The ggplot package</title>
+      <link>/graphs/ggplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/ggplot/</guid>
+      <description>The ggplot package The most common data visualisation package in RStudio is ggplot. We may install ggplot by using the install.packages() function. We write install.packages(&amp;quot;ggplot2&amp;quot;) and we call the package by using the library() function.
+library(ggplot2) First of all, as most packages in RStudio the ggplot team created a cheatsheet. You may find it here ggplot Cheatsheet
+If we call the ggplot() function then we will create an empty canvas.</description>
+    </item>
+    
+    <item>
+      <title>Graphs-categorical variables</title>
+      <link>/graphs/graphs_categorical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_categorical/</guid>
+      <description>Below you will find some examples of graphs for categorical variables. Of course there are many more graphs available to help you visualise your hypothesis and research question.
+Bar Plots Let’s use this minimal example to see how ggplot works.
+library(ggplot2) plot1&amp;lt;-ggplot(EVS_UK, aes(x = gender)) + geom_bar() + theme_classic() plot1 # You can&amp;#39;t view the plot unless you call it  Our first step is to give meaningful names to the values of our variable (gender).</description>
+    </item>
+    
+    <item>
+      <title>Graphs-continuous variables</title>
+      <link>/graphs/graphs_continuous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_continuous/</guid>
+      <description>One continuous variable For the following example we will use a variable describing citizens’ satisfaction with the political system, the name of the variable is v144. We will use the names() function to give a meaningful name to the variable.
+The general formula is: names(my_data)[names(my_data) == “old.variable.name”] &amp;lt;- “new_variable_name”
+names(EVS_UK)[names(EVS_UK)==&amp;quot;v144&amp;quot;]&amp;lt;- &amp;quot;pol_sat&amp;quot; table(EVS_UK$pol_sat) ## ## 1 2 3 4 5 6 7 8 9 10 ## 170 104 178 223 243 227 305 201 55 46 plot5 &amp;lt;- ggplot(na.</description>
+    </item>
+    
+    <item>
+      <title>Graphs-ordinal variables</title>
+      <link>/graphs/graphs_density_plots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_density_plots/</guid>
+      <description>In this section we will use two varaibles describing anti-immigration attitudes, the first one is called v184 and is asking responders to agree or desigree with the following statement “Immigrants take away jobs”. The second variable is called v186 and is asking responders whether “Immigrants are responsible for crime”.
+names(EVS_UK)[names(EVS_UK) == &amp;quot;v184&amp;quot;] &amp;lt;- &amp;quot;immi_jobs&amp;quot; table(EVS_UK$immi_jobs) # This is to check whether the function was correctly specified ## ## 1 2 3 4 5 ## 71 197 631 610 272 We may add labels to the values using the functions we used at section 1:</description>
+    </item>
+    
+    <item>
+      <title>Graphs-ordinal variables</title>
+      <link>/graphs/graphs_ordinal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_ordinal/</guid>
+      <description>In this section we will use two varaibles describing anti-immigration attitudes, the first one is called v184 and is asking responders to agree or desigree with the following statement “Immigrants take away jobs”. The second variable is called v186 and is asking responders whether “Immigrants are responsible for crime”.
+names(EVS_UK)[names(EVS_UK) == &amp;quot;v184&amp;quot;] &amp;lt;- &amp;quot;immi_jobs&amp;quot; table(EVS_UK$immi_jobs) # This is to check whether the function was correctly specified ## ## 1 2 3 4 5 ## 71 197 631 610 272 We may add labels to the values using the functions we used at section 1:</description>
+    </item>
+    
+    <item>
+      <title>Introduction to regression analysis</title>
+      <link>/regression_analysis/regression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/regression_analysis/regression/</guid>
+      <description>As always, start by opening a new script file, give to your file a “good name” and save it in our folder (POL2045). Remove everything from RStudio’s memory and set your working directory
+rm(list=ls()) setwd(&amp;quot;~POL2045&amp;quot;) Today we will learn how to produce a regression model, to do so, we will use a dataset produced by Pippa Norris. The dataset is called “DEMOCRACY CROSS-NATIONAL DATA”, and you may find it on our module’s website on SurreyLearn.</description>
+    </item>
+    
+    <item>
+      <title>Interpreting the regression output</title>
+      <link>/regression_analysis/regression-interpretation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/regression_analysis/regression-interpretation/</guid>
+      <description>Let’s start by having a look at the formula:
+lm(formula = Dem_Gov1984 ~ GDPPC1984, data = GDP_Dem)  Dem_Gov1984 : is our dependent variable  GDPPC1984  : is our independent variable
+Residuals: ## Min 1Q Median 3Q Max ## -104.470 -16.507 -6.817 16.879 53.869   Residuals : The difference between the observed values and the predicted values of GDPPC1984.
+Coefficients: Estimate Std. Error t value Pr(&amp;gt;|t|) (Intercept) 1.</description>
+    </item>
+    
+    <item>
+      <title>Visualising the relationship</title>
+      <link>/regression_analysis/regression-graphs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/regression_analysis/regression-graphs/</guid>
+      <description>Let’s plot the elationship between the two variables, dependent and independent, but this time we will include the regression line.
+plot.2&amp;lt;-ggplot(GDP_Dem, aes(x=GDPPC1984, y=Dem_Gov1984)) +geom_point(size=3) + stat_smooth(method = &amp;quot;lm&amp;quot;, col = &amp;quot;red&amp;quot;)+ theme_classic()+ scale_x_continuous(breaks = seq(0, 75000, by = 5000))+ scale_y_continuous(breaks = seq(0, 200, by = 10))+ labs(x=&amp;quot;Democratic Governance&amp;quot;, y=&amp;quot;GDP Per Capita&amp;quot;) plot.2 ## Warning: Removed 95 rows containing non-finite values (stat_smooth). ## Warning: Removed 95 rows containing missing values (geom_point).</description>
+    </item>
+    
+    <item>
+      <title>Professional outputs</title>
+      <link>/regression_analysis/regression-stargazer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/regression_analysis/regression-stargazer/</guid>
+      <description>R can make complicated things easy and the package below will save you a lot of time. In your assignments you should have tables similar to the ones you see in official reports and journal publications. The stargazer package will allow to do this without having to update your table multiple times.
+library(stargazer) stargazer(model.1, type=&amp;quot;html&amp;quot;, out=&amp;quot;model_one.doc&amp;quot;) Note: If you are using LATEX instead of Word you don’t have to specify the type and the output (out).</description>
+    </item>
+    
+    <item>
+      <title>Prepare your variables</title>
+      <link>/multivariate_regression/prepare-data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/multivariate_regression/prepare-data/</guid>
+      <description>As always, start by opening a new script file, give to your file a “good name” and save it in our folder (POL2045). Remove everything from RStudio’s memory and set your working directory
+rm(list=ls()) setwd(&amp;quot;~POLXXXX&amp;quot;) # Remember XXXXis the code of your module The dplyr package Although many data manipulation function exist in basic R sometimes it is easier to use packages build for the sole purpose of making data manipulation easier.</description>
+    </item>
+    
+    <item>
+      <title>The model</title>
+      <link>/multivariate_regression/models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/multivariate_regression/models/</guid>
+      <description>We are now ready to conduct our analysis. We will use the lm() function.
+library(lme4) model.1&amp;lt;-lm(immi.jobs~ born.country+respect.inst+country.ancestry+speak.lang+share.cultr+left_right+education+gender+age,data=sub.sample) summary(model.1) ## ## Call: ## lm(formula = immi.jobs ~ born.country + respect.inst + country.ancestry + ## speak.lang + share.cultr + left_right + education + gender + ## age, data = sub.sample) ## ## Residuals: ## Min 1Q Median 3Q Max ## -6.1341 -1.6810 -0.1593 1.6917 7.8835 ## ## Coefficients: ## Estimate Std. Error t value Pr(&amp;gt;|t|) ## (Intercept) 1.</description>
+    </item>
+    
+    <item>
+      <title>Prepare your dataset</title>
+      <link>/binary_regression/prepare-data_binary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/binary_regression/prepare-data_binary/</guid>
+      <description>For this section we will be using data from the British Election Stystem survey to investigate the effect of perceptions about the economy on party choice. This is part of a broader research examining the effect of political issues on party choice and especialy on the effect of the economy on the party in government.
+Lewis-Beck, Michael S., and Martin Paldam. “Economic voting: an introduction.” Electoral studies 19.2-3 (2000): 113-121.</description>
+    </item>
+    
+    <item>
+      <title>Create your dependent variable</title>
+      <link>/binary_regression/prepare-dependent_variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/binary_regression/prepare-dependent_variable/</guid>
+      <description> Create the dependent variable Our dependent variable is a dichotomous, dummy variable where \(1\) means that the respondent voted for the party in government - this is what we are trying to explain- and \(0\) means that they voted for another party.
+eco_voting&amp;lt;-eco_voting %&amp;gt;% mutate(incumbent=case_when(b02==2~1, b02==1~0, b02&amp;gt;=3~0))  You may use the table() function to double check the new variable entitled `incumbent’:
+table(eco_voting$b02) ## ## 0 1 2 3 4 5 6 7 ## 2 457 347 48 49 1 19 21 table(eco_voting$incumbent) ## ## 0 1 ## 595 347  </description>
+    </item>
+    
+    <item>
+      <title>The logistic regression model</title>
+      <link>/binary_regression/models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/binary_regression/models/</guid>
+      <description>Logistic Regression Model We will use the generalized linear model function glm() to estimate a logistic regression-remember that we have a dummy dependent variable. The function is very similar to the lm() function- the only difference is that there is an additional argument called family(). The family() function will tell R that we want to estimate a logistic regression.
+Let’s see it in practice, all we have to do is to include the following line in the glm() function:</description>
+    </item>
+    
+    <item>
+      <title>Predicted probabilities</title>
+      <link>/binary_regression/predicted_probabilities/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/binary_regression/predicted_probabilities/</guid>
+      <description>Predicted probabilities As you may already realised log-odds are not straight-forward, this is why we use the predict() function which give us predictions for Y, the dependent variable.
+probabilities&amp;lt;-predict(logit.model,type = &amp;quot;response&amp;quot;)  The effects package The final section include’s the use of the effects package developed by Fox, et al. The effects package creates plots for various statistical models. In this example I will show you how it works with a logistic model- but it works with linear models, mixed effects models and many other.</description>
+    </item>
+    
+    <item>
+      <title>Prepare your variables</title>
+      <link>/interaction_term/prepare-data_interaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/interaction_term/prepare-data_interaction/</guid>
+      <description>For this section we will use the same model as for the multivariate regression analysis. Our dependent variable is attitudes towards immigration immi.jobs.
+Let’s upload our dataset
+library(haven) EVS &amp;lt;- read_dta(&amp;quot;ZA7500_v2-0-0.dta&amp;quot;) View(EVS) Our next step is to keep only the variables we are interesting in:
+library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union select(EVS, v102, v185, v189,v190, v191, v192, v193, v225,v226,v243_edulvlb,country,v175_cs,v275c_N1) ## # A tibble: 56,368 x 13 ## v102 v185 v189 v190 v191 v192 v193 v225 v226 ## &amp;lt;dbl&amp;gt; &amp;lt;dbl+lb&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl+l&amp;gt; &amp;lt;dbl&amp;gt; ## 1 5 8 2 [qui… 1 [ver… 4 [not… 1 [ver… 1 [ver… 1 [mal… 1957 ## 2 3 10 [do … 3 [not… 1 [ver… 3 [not… 2 [qui… 1 [ver… 2 [fem… 1950 ## 3 4 8 4 [not… 1 [ver… 4 [not… 2 [qui… 2 [qui… 1 [mal… 1979 ## 4 6 4 3 [not… 4 [not… 4 [not… 2 [qui… 2 [qui… 2 [fem… 1962 ## 5 5 4 2 [qui… 1 [ver… 2 [qui… 1 [ver… 1 [ver… 2 [fem… 1949 ## 6 6 5 2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [fem… 1975 ## 7 4 8 2 [qui… 2 [qui… 3 [not… 2 [qui… 2 [qui… 1 [mal… 1957 ## 8 6 5 3 [not… 2 [qui… 4 [not… 2 [qui… 2 [qui… 1 [mal… 1981 ## 9 2 10 [do … 3 [not… 3 [not… 3 [not… 3 [not… 1 [ver… 2 [fem… 1955 ## 10 4 8 3 [not… 1 [ver… 4 [not… 1 [ver… 2 [qui… 1 [mal… 1971 ## # … with 56,358 more rows, and 4 more variables: v243_edulvlb &amp;lt;dbl+lbl&amp;gt;, ## # country &amp;lt;dbl+lbl&amp;gt;, v175_cs &amp;lt;dbl+lbl&amp;gt;, v275c_N1 &amp;lt;dbl+lbl&amp;gt; Since we are only interested in Germany we should exclude all other countries from the analysis:</description>
+    </item>
+    
+    <item>
+      <title>Construct and plot your interaction term</title>
+      <link>/interaction_term/prepare-interaction_term/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/interaction_term/prepare-interaction_term/</guid>
+      <description>The \(:\) designates the interaction between two variables. The operator \(*\) designates the interaction between the two variables, plus the main effects. In our model we included an interaction term between two variables born.country and east_west.
+model.1&amp;lt;-lm(immi.jobs~ born.country*east_west+country.ancestry+share.cultr+left_right+education,data=EVS.Germany) summary(model.1) ## ## Call: ## lm(formula = immi.jobs ~ born.country * east_west + country.ancestry + ## share.cultr + left_right + education, data = EVS.Germany) ## ## Residuals: ## &amp;lt;Labelled double&amp;gt;: immigrants take away jobs from [nationality] (Q52A) ## Min 1Q Median 3Q Max ## -5.</description>
+    </item>
+    
+    <item>
+      <title>Additional resources</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Here you may find some great resources for learning R Swirl
+Swirl, and interactive tutorial. It is an installable package that will run through RStudio.
+Cookbook for R 
+A very useful online tutorial, especially when it comes to graphs
+Quick-R
+Another very useful website, here you will find clear and to the point instructions on how to create new variables, recode the values of existing ones, assign missing cases etc.</description>
+    </item>
+    
+    <item>
+      <title>Additional resources</title>
+      <link>/showcase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/showcase/</guid>
+      <description>Here you may find some great resources for learning R Swirl
+Swirl, and interactive tutorial. It is an installable package that will run through RStudio.
+**Cookbook for R **
+A very useful online tutorial, especially when it comes to graphs
+Quick-R
+Another very useful website, here you will find clear and to the point instructions on how to create new variables, recode the values of existing ones, assign missing cases etc.</description>
+    </item>
+    
+    <item>
+      <title>Correlation</title>
+      <link>/bivariate/correlation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/bivariate/correlation/</guid>
+      <description>If we want to examine the relationship between two continuous variables then calculate the correlation coefficient commonly known as Pearson’s r. The correlation coefficient ranges from \(-1\) to \(1\) where \(-1\) indicates a perfect negative relationship between the two variables and \(1\) a perfect positive relationship. We calculate the correlation coefficient by using the cor() function.
+For example, load the EVS_UK dataset. We will examine the relationship between peoples’ attitudes towards EU (v198) and attitudes towards immigration (v185).</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Quantitative Research Methods</title>
+      <link>/_welcome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/_welcome/</guid>
+      <description>Welcome to Quantitative research methods!
+This module will introduce you to concepts and techniques essential to the analysis of political issues using quantitative methods. This module provides an introduction to quantitative analysis and the ways in which these tools are applied to politics.
+Together we will cover topics related to statistical inference; hypothesis testing; bivariate and multivariate regression analysis, and interaction terms among others.
+This course will also provide you the opportunity to become proficient in the use of cutting edge computer software widely used in analysing quantitative data.</description>
+    </item>
+    
+  </channel>
+</rss>

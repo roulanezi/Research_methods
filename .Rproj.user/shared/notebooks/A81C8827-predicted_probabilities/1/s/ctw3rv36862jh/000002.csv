@@ -1,0 +1,4 @@
+"0","library(effects)"
+"0","plot(allEffects(logit.model))"
+"2","Error in allEffects(logit.model) : object 'logit.model' not found
+"

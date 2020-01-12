@@ -1,0 +1,117 @@
+---
+title: Prepare your variables
+weight: 33
+---
+
+
+
+<p>For this section we will use the same model as for the multivariate regression analysis. Our dependent variable is attitudes towards immigration <code>immi.jobs</code>.</p>
+<p>Let’s upload our dataset</p>
+<pre class="r"><code>library(haven)
+EVS &lt;- read_dta(&quot;ZA7500_v2-0-0.dta&quot;)
+View(EVS)</code></pre>
+<p>Our next step is to keep only the variables we are interesting in:</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>select(EVS, v102, v185, v189,v190, v191, v192, v193, v225,v226,v243_edulvlb,country,v175_cs,v275c_N1)</code></pre>
+<pre><code>## # A tibble: 56,368 x 13
+##     v102     v185    v189    v190    v191    v192    v193    v225  v226
+##    &lt;dbl&gt; &lt;dbl+lb&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl+l&gt; &lt;dbl&gt;
+##  1     5  8       2 [qui… 1 [ver… 4 [not… 1 [ver… 1 [ver… 1 [mal…  1957
+##  2     3 10 [do … 3 [not… 1 [ver… 3 [not… 2 [qui… 1 [ver… 2 [fem…  1950
+##  3     4  8       4 [not… 1 [ver… 4 [not… 2 [qui… 2 [qui… 1 [mal…  1979
+##  4     6  4       3 [not… 4 [not… 4 [not… 2 [qui… 2 [qui… 2 [fem…  1962
+##  5     5  4       2 [qui… 1 [ver… 2 [qui… 1 [ver… 1 [ver… 2 [fem…  1949
+##  6     6  5       2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [qui… 2 [fem…  1975
+##  7     4  8       2 [qui… 2 [qui… 3 [not… 2 [qui… 2 [qui… 1 [mal…  1957
+##  8     6  5       3 [not… 2 [qui… 4 [not… 2 [qui… 2 [qui… 1 [mal…  1981
+##  9     2 10 [do … 3 [not… 3 [not… 3 [not… 3 [not… 1 [ver… 2 [fem…  1955
+## 10     4  8       3 [not… 1 [ver… 4 [not… 1 [ver… 2 [qui… 1 [mal…  1971
+## # … with 56,358 more rows, and 4 more variables: v243_edulvlb &lt;dbl+lbl&gt;,
+## #   country &lt;dbl+lbl&gt;, v175_cs &lt;dbl+lbl&gt;, v275c_N1 &lt;dbl+lbl&gt;</code></pre>
+<p>Since we are only interested in Germany we should exclude all other countries from the analysis:</p>
+<pre class="r"><code>library(dplyr)
+EVS.Germany&lt;-EVS %&gt;% filter(country == 276) 
+table(EVS.Germany$country)</code></pre>
+<pre><code>## 
+##  276 
+## 5407</code></pre>
+<pre class="r"><code>View(EVS.Germany)</code></pre>
+<p>Let’s exclude the missing cases:</p>
+<pre class="r"><code>EVS.Germany[EVS.Germany &lt;=-1] &lt;- NA
+EVS.Germany[EVS.Germany &lt;=-2] &lt;- NA</code></pre>
+<p>Our next step is to give meaningful names to our variables while we are arrange the order of the values (if and when necessary):</p>
+<pre class="r"><code>EVS.Germany&lt;-EVS.Germany %&gt;% mutate(immi.jobs=(max(v185,na.rm=TRUE)-(v185)))
+EVS.Germany&lt;-EVS.Germany %&gt;% mutate(born.country=(max(v189,na.rm=TRUE)-(v189)))
+EVS.Germany&lt;-EVS.Germany %&gt;% mutate(respect.inst=(max(v190,na.rm=TRUE)-(v190)))
+EVS.Germany&lt;-EVS.Germany %&gt;% mutate(country.ancestry=(max(v191,na.rm=TRUE)-(v191)))
+EVS.Germany&lt;-EVS.Germany %&gt;% mutate(speak.lang=(max(v192,na.rm=TRUE)-(v192)))
+EVS.Germany&lt;-EVS.Germany %&gt;% mutate(share.cultr=(max(v193,na.rm=TRUE)-(v193)))
+EVS.Germany&lt;-EVS.Germany %&gt;% rename(education=v243_edulvlb)
+EVS.Germany&lt;-EVS.Germany %&gt;% rename(left_right=v102)
+EVS.Germany&lt;-EVS.Germany %&gt;% rename(region=v275c_N1)
+head(EVS.Germany)</code></pre>
+<pre><code>## # A tibble: 6 x 440
+##   studyno doi   version studynoc versionc id_cocas caseno       year fw_start
+##     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl+lbl&gt; &lt;dbl+lb&gt;
+## 1    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6255 2017 [201…   201710
+## 2    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6298 2017 [201…   201710
+## 3    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6309 2017 [201…   201710
+## 4    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6315 2017 [201…   201710
+## 5    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6319 2017 [201…   201710
+## 6    7500 doi:… 2.0.0 …     7514 2.0.0 (…  2.02e12   6323 2017 [201…   201710
+## # … with 431 more variables: fw_end &lt;dbl+lbl&gt;, country &lt;dbl+lbl&gt;, c_abrv &lt;chr&gt;,
+## #   cntry_y &lt;dbl+lbl&gt;, mode &lt;dbl+lbl&gt;, mm_select_sample &lt;dbl+lbl&gt;,
+## #   mm_mixed_mode &lt;dbl+lbl&gt;, mm_mode_fu &lt;dbl+lbl&gt;, mm_matrix_group &lt;dbl+lbl&gt;,
+## #   mm_fw_start_fu &lt;dbl+lbl&gt;, mm_fw_end_fu &lt;dbl+lbl&gt;, mm_year_fu &lt;dbl+lbl&gt;,
+## #   mr_detailed_mode_DE &lt;dbl+lbl&gt;, mr_contact_mode_DE &lt;dbl+lbl&gt;,
+## #   mr_incentive_DE &lt;dbl+lbl&gt;, v1 &lt;dbl+lbl&gt;, v2 &lt;dbl+lbl&gt;, v3 &lt;dbl+lbl&gt;,
+## #   v4 &lt;dbl+lbl&gt;, v5 &lt;dbl+lbl&gt;, v6 &lt;dbl+lbl&gt;, v7 &lt;dbl+lbl&gt;, v8 &lt;dbl+lbl&gt;,
+## #   v9 &lt;dbl+lbl&gt;, v10 &lt;dbl+lbl&gt;, v11 &lt;dbl+lbl&gt;, v12 &lt;dbl+lbl&gt;, v13 &lt;dbl+lbl&gt;,
+## #   v14 &lt;dbl+lbl&gt;, v15 &lt;dbl+lbl&gt;, v16 &lt;dbl+lbl&gt;, v17 &lt;dbl+lbl&gt;, v18 &lt;dbl+lbl&gt;,
+## #   v19 &lt;dbl+lbl&gt;, f20 &lt;dbl+lbl&gt;, v20 &lt;dbl+lbl&gt;, v20a &lt;dbl+lbl&gt;,
+## #   v20b &lt;dbl+lbl&gt;, v21 &lt;dbl+lbl&gt;, v22 &lt;dbl+lbl&gt;, v23 &lt;dbl+lbl&gt;, v24 &lt;dbl+lbl&gt;,
+## #   f24_IT &lt;dbl+lbl&gt;, v24a_IT &lt;dbl+lbl&gt;, v24b_IT &lt;dbl+lbl&gt;, v25 &lt;dbl+lbl&gt;,
+## #   v26 &lt;dbl+lbl&gt;, v27 &lt;dbl+lbl&gt;, v28 &lt;dbl+lbl&gt;, v29 &lt;dbl+lbl&gt;, v30 &lt;dbl+lbl&gt;,
+## #   f30a &lt;dbl+lbl&gt;, v30a &lt;dbl+lbl&gt;, v30b &lt;dbl+lbl&gt;, v30c &lt;dbl+lbl&gt;,
+## #   v31 &lt;dbl+lbl&gt;, v32 &lt;dbl+lbl&gt;, v33 &lt;dbl+lbl&gt;, v34 &lt;dbl+lbl&gt;, v35 &lt;dbl+lbl&gt;,
+## #   v36 &lt;dbl+lbl&gt;, v37 &lt;dbl+lbl&gt;, v38 &lt;dbl+lbl&gt;, v39 &lt;dbl+lbl&gt;, v40 &lt;dbl+lbl&gt;,
+## #   v41 &lt;dbl+lbl&gt;, v42 &lt;dbl+lbl&gt;, v43 &lt;dbl+lbl&gt;, v44 &lt;dbl+lbl&gt;, v45 &lt;dbl+lbl&gt;,
+## #   f45a &lt;dbl+lbl&gt;, v45a &lt;dbl+lbl&gt;, v45b &lt;dbl+lbl&gt;, v45c &lt;dbl+lbl&gt;,
+## #   v46 &lt;dbl+lbl&gt;, f46_IT &lt;dbl+lbl&gt;, v47 &lt;dbl+lbl&gt;, v48 &lt;dbl+lbl&gt;,
+## #   v49 &lt;dbl+lbl&gt;, v50 &lt;dbl+lbl&gt;, v51 &lt;dbl+lbl&gt;, v52 &lt;dbl+lbl&gt;,
+## #   v52_cs &lt;dbl+lbl&gt;, v53 &lt;dbl+lbl&gt;, v54 &lt;dbl+lbl&gt;, v55 &lt;dbl+lbl&gt;,
+## #   v56 &lt;dbl+lbl&gt;, v57 &lt;dbl+lbl&gt;, v58 &lt;dbl+lbl&gt;, v59 &lt;dbl+lbl&gt;, v60 &lt;dbl+lbl&gt;,
+## #   v61 &lt;dbl+lbl&gt;, v62 &lt;dbl+lbl&gt;, v63 &lt;dbl+lbl&gt;, v64 &lt;dbl+lbl&gt;, v65 &lt;dbl+lbl&gt;,
+## #   v66 &lt;dbl+lbl&gt;, v67 &lt;dbl+lbl&gt;, v68 &lt;dbl+lbl&gt;, v69 &lt;dbl+lbl&gt;, …</code></pre>
+<p>Next step is to create the variable measuring whether the respondent lived in Eastern or Western Germany. You may consult the Codebook to identify the 5 regions that used to belong to Eastern Germany.</p>
+<pre class="r"><code>table(EVS.Germany$region)</code></pre>
+<pre><code>## 
+## 27601 27602 27603 27604 27605 27606 27607 27608 27609 27610 27611 27612 27613 
+##   682   908   223   184    35    84   428   133   545  1079   262    60   320 
+## 27614 27615 27616 
+##   139   176   149</code></pre>
+<pre class="r"><code>EVS.Germany$east_west &lt;- NA
+EVS.Germany$east_west[EVS.Germany$region==27604] &lt;- 1
+EVS.Germany$east_west[EVS.Germany$region==27608] &lt;- 1
+EVS.Germany$east_west[EVS.Germany$region==27613] &lt;- 1 
+EVS.Germany$east_west[EVS.Germany$region==27614] &lt;- 1
+EVS.Germany$east_west[EVS.Germany$region==27616] &lt;- 1 
+EVS.Germany$east_west[EVS.Germany$region==27603] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27607] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27609] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27610] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27611] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27612] &lt;- 0
+EVS.Germany$east_west[EVS.Germany$region==27615] &lt;- 0
+table(EVS.Germany$east_west)</code></pre>
+<pre><code>## 
+##    0    1 
+## 2773  925</code></pre>

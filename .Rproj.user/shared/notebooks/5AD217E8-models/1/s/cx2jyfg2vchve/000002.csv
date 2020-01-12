@@ -1,0 +1,4 @@
+"0","library(dplyr)"
+"0","load(""EVS_UK_full.RData"")"
+"0","sub.sample<-EVS_UK_full %>% select(v102, v185, v189,v190, v191, v192, v193, v225, v226,v243_edulvlb,country)"
+"0","sub.sample %>% filter(country == 826) "

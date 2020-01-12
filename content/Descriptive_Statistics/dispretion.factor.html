@@ -1,0 +1,42 @@
+---
+title: Categorical variables
+weight: 15
+---
+
+
+
+<p>Some variables, consist of named categories, e.g. the name of your favourite brand. A category-variable, or a categorical variable refers to any variable that puts individuals into categories. These variables are also called nominal variables. The word <em>nominal</em> comes from Latin (<em>nominalis</em>=of a name), because we are giving names to the values of our variable.</p>
+<p>With categorical variables we want to understand the frequency with which each value appears in our dataset. As you already know the easiest way to do so is by producing a table. Remember the <code>table ()</code> function. The appropriate measure of central tendency for categorical variables is the <strong>mode</strong> and/or the <strong>median</strong>.</p>
+<p>Below we will learn some basic data manipulation for categorical variables. Starting with identifying the <code>class()</code> of a variable before we move to assigning a new name to variable and to the values of a categorical variable.</p>
+<p>There are numerous data types in R. The most frequent used ones are numeric, character (string) or factor, and logical (TRUE or FALSE). To check the type of data contained in a variable we can use the <code>class()</code> function.</p>
+<pre class="r"><code>class(EVS_UK$v174_cs)</code></pre>
+<pre><code>## [1] &quot;haven_labelled&quot;</code></pre>
+<p>To find the lenght of a character variable we use the <code>nchar()</code> function.</p>
+<p>{{% notice tip %}}R promotes numeric variables and sometimes when you import SPSS or STATA files, RStudio is listing them as <code>haven_labelled</code>. If accidentally your factor variable is listed as numeric or <code>haven_labelled</code>, you may convert it to factor by using the <code>as.factor()</code> function. Let’s examine the variable describing education. The variable has a very technical name, that is why we should assign a meaningful name to the variable. Alternatively, you may install the <strong>sjlabelled</strong> package. You may find more info <a href="https://rdrr.io/cran/sjlabelled/man/read_spss.html">here</a></p>
+<p>{{% /notice %}}</p>
+<pre class="r"><code>EVS_UK$education&lt;-EVS_UK$v243_r_weight
+class(EVS_UK$education)</code></pre>
+<pre><code>## [1] &quot;haven_labelled&quot;</code></pre>
+<p>Accidentally RStudio, listed education as a haven_labelled variable. As you know, education is a classic example of a categorical variable.How can we convert a numerical variable to a factor? This is easy.
+Note that as the same time we will learn how to covert a variable from numeric to factor but also how to name values.</p>
+<p>Let’s do it!</p>
+<pre class="r"><code>EVS_UK$education &lt;- factor(EVS_UK$education,
+                         levels = c(1, 2, 3),
+                         labels = c(&quot;Low&quot;, &quot;Medium&quot;, &quot;Upper&quot;))
+table(EVS_UK$education)</code></pre>
+<pre><code>## 
+##    Low Medium  Upper 
+##    590    313    885</code></pre>
+<p>Let’s examine our new factor variable with a frequency table</p>
+<pre class="r"><code>table(EVS_UK$education)</code></pre>
+<pre><code>## 
+##    Low Medium  Upper 
+##    590    313    885</code></pre>
+<p>The most common graphical representation of categorical variables is bar graphs and pie charts.</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(data.frame(EVS_UK), aes(x=education)) +
+  geom_bar()</code></pre>
+<p><img src="/Descriptive_Statistics/dispretion.factor_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>{{% notice note %}}
+Adjust the width of the bars using the width function, change the appearance of the axes by giving labels. Give a title to your graph. <a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">RStudio Base cheatsheet</a>
+{{% /notice %}}</p>

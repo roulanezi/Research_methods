@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualising relationships on Quantitative Research Methods</title>
+    <link>/graphs/</link>
+    <description>Recent content in Visualising relationships on Quantitative Research Methods</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="/graphs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The ggplot package</title>
+      <link>/graphs/ggplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/ggplot/</guid>
+      <description>The ggplot package The most common data visualisation package in RStudio is ggplot. We may install ggplot by using the install.packages() function. We write install.packages(&amp;quot;ggplot2&amp;quot;) and we call the package by using the library() function.
+library(ggplot2) First of all, as most packages in RStudio the ggplot team created a cheatsheet. You may find it here ggplot Cheatsheet
+If we call the ggplot() function then we will create an empty canvas.</description>
+    </item>
+    
+    <item>
+      <title>Graphs-categorical variables</title>
+      <link>/graphs/graphs_categorical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_categorical/</guid>
+      <description>Below you will find some examples of graphs for categorical variables. Of course there are many more graphs available to help you visualise your hypothesis and research question.
+Bar Plots Let’s use this minimal example to see how ggplot works.
+library(ggplot2) plot1&amp;lt;-ggplot(EVS_UK, aes(x = gender)) + geom_bar() + theme_classic() plot1 # You can&amp;#39;t view the plot unless you call it  Our first step is to give meaningful names to the values of our variable (gender).</description>
+    </item>
+    
+    <item>
+      <title>Graphs-continuous variables</title>
+      <link>/graphs/graphs_continuous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_continuous/</guid>
+      <description>One continuous variable For the following example we will use a variable describing citizens’ satisfaction with the political system, the name of the variable is v144. We will use the names() function to give a meaningful name to the variable.
+The general formula is: names(my_data)[names(my_data) == “old.variable.name”] &amp;lt;- “new_variable_name”
+names(EVS_UK)[names(EVS_UK)==&amp;quot;v144&amp;quot;]&amp;lt;- &amp;quot;pol_sat&amp;quot; table(EVS_UK$pol_sat) ## ## 1 2 3 4 5 6 7 8 9 10 ## 170 104 178 223 243 227 305 201 55 46 plot5 &amp;lt;- ggplot(na.</description>
+    </item>
+    
+    <item>
+      <title>Graphs-ordinal variables</title>
+      <link>/graphs/graphs_density_plots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_density_plots/</guid>
+      <description>In this section we will use two varaibles describing anti-immigration attitudes, the first one is called v184 and is asking responders to agree or desigree with the following statement “Immigrants take away jobs”. The second variable is called v186 and is asking responders whether “Immigrants are responsible for crime”.
+names(EVS_UK)[names(EVS_UK) == &amp;quot;v184&amp;quot;] &amp;lt;- &amp;quot;immi_jobs&amp;quot; table(EVS_UK$immi_jobs) # This is to check whether the function was correctly specified ## ## 1 2 3 4 5 ## 71 197 631 610 272 We may add labels to the values using the functions we used at section 1:</description>
+    </item>
+    
+    <item>
+      <title>Graphs-ordinal variables</title>
+      <link>/graphs/graphs_ordinal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/graphs/graphs_ordinal/</guid>
+      <description>In this section we will use two varaibles describing anti-immigration attitudes, the first one is called v184 and is asking responders to agree or desigree with the following statement “Immigrants take away jobs”. The second variable is called v186 and is asking responders whether “Immigrants are responsible for crime”.
+names(EVS_UK)[names(EVS_UK) == &amp;quot;v184&amp;quot;] &amp;lt;- &amp;quot;immi_jobs&amp;quot; table(EVS_UK$immi_jobs) # This is to check whether the function was correctly specified ## ## 1 2 3 4 5 ## 71 197 631 610 272 We may add labels to the values using the functions we used at section 1:</description>
+    </item>
+    
+  </channel>
+</rss>

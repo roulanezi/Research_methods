@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.60.1" />
+    <meta name="description" content="Quantitative Research Methods-POL-Surrey">
+<meta name="author" content="Dr. Roula Nezi">
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title></title>
+  <meta name="generator" content="LibreOffice 5.2.7.2 (Linux)"/>
+  <meta name="created" content="00:00:00"/>
+  <meta name="changed" content="00:00:00"/>
+</head>
+<body>
+<h1></h1>
+</body>
+</html>
+    <title>Load data in RStudio :: Quantitative Research Methods</title>
+
+    
+    <link href="/css/nucleus.css?1578853153" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1578853153" rel="stylesheet">
+    <link href="/css/hybrid.css?1578853153" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1578853153" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1578853153" rel="stylesheet">
+    <link href="/css/auto-complete.css?1578853153" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1578853153" rel="stylesheet">
+    <link href="/css/theme.css?1578853153" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1578853153" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1578853153"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/descriptive_statistics/load.data/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"><style>img{display: block; margin-left: auto; margin-right: auto;}</style></head><body><img src="data:image/png;base64,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" alt="logo.png" style="max-width:100%;"></body></html>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1578853153"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1578853153"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1578853153"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/">
+          <b>1. </b>Introduction
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/console/" title="The Console" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/console/">
+          The Console
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/script/" title="Scripts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/script/">
+          Scripts
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/vectors/" title="Vectors" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/vectors/">
+          Vectors
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/functions/" title="Functions in RStudio" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/functions/">
+          Functions in RStudio
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/help/" title="Getting Help" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/help/">
+          Getting Help
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/operator/" title="The Assignment Operator" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/operator/">
+          The Assignment Operator
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/data_frames/" title="Data Frames" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/data_frames/">
+          Data Frames
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/descriptive_statistics/" title="Measures of central tendency" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/descriptive_statistics/">
+          <b>2. </b>Measures of central tendency
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/find.data/" title="Where to find data" class="dd-item ">
+        <a href="/descriptive_statistics/find.data/">
+        Where to find data
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/descriptive_statistics/load.data/" title="Load data in RStudio" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/descriptive_statistics/load.data/">
+          Load data in RStudio
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/explore/" title="Explore your dataset" class="dd-item ">
+        <a href="/descriptive_statistics/explore/">
+        Explore your dataset
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/mean.median/" title="The mean and the median" class="dd-item ">
+        <a href="/descriptive_statistics/mean.median/">
+        The mean and the median
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/mode/" title="The mode" class="dd-item ">
+        <a href="/descriptive_statistics/mode/">
+        The mode
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/dispretion/" title="Measures of dispersion" class="dd-item ">
+        <a href="/descriptive_statistics/dispretion/">
+        Measures of dispersion
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/descriptive_statistics/dispretion.factor/" title="Categorical variables" class="dd-item ">
+        <a href="/descriptive_statistics/dispretion.factor/">
+        Categorical variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/clm/" title="The Central Limit Theorem" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/clm/">
+          <b>3. </b>The Central Limit Theorem
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/clm/central_limit_theorem/" title="An illustration" class="dd-item ">
+        <a href="/clm/central_limit_theorem/">
+        An illustration
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bivariate/" title="Bivariate Analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bivariate/">
+          <b>4. </b>Bivariate Analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bivariate/ttest/" title="T-test" class="dd-item ">
+        <a href="/bivariate/ttest/">
+        T-test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bivariate/correlation/" title="Correlation" class="dd-item ">
+        <a href="/bivariate/correlation/">
+        Correlation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/graphs/" title="Visualising relationships" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/graphs/">
+          <b>5. </b>Visualising relationships
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/graphs/ggplot/" title="The ggplot package" class="dd-item ">
+        <a href="/graphs/ggplot/">
+        The ggplot package
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/graphs/graphs_categorical/" title="Graphs-categorical variables" class="dd-item ">
+        <a href="/graphs/graphs_categorical/">
+        Graphs-categorical variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/graphs/graphs_continuous/" title="Graphs-continuous variables" class="dd-item ">
+        <a href="/graphs/graphs_continuous/">
+        Graphs-continuous variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/graphs/graphs_density_plots/" title="Graphs-ordinal variables" class="dd-item ">
+        <a href="/graphs/graphs_density_plots/">
+        Graphs-ordinal variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/graphs/graphs_ordinal/" title="Graphs-ordinal variables" class="dd-item ">
+        <a href="/graphs/graphs_ordinal/">
+        Graphs-ordinal variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/regression_analysis/" title="Regression Analysis- The basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/regression_analysis/">
+          <b>6. </b>Regression Analysis- The basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/regression_analysis/regression/" title="Introduction to regression analysis" class="dd-item ">
+        <a href="/regression_analysis/regression/">
+        Introduction to regression analysis
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/regression_analysis/regression-interpretation/" title="Interpreting the regression output" class="dd-item ">
+        <a href="/regression_analysis/regression-interpretation/">
+        Interpreting the regression output
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/regression_analysis/regression-graphs/" title="Visualising the relationship" class="dd-item ">
+        <a href="/regression_analysis/regression-graphs/">
+        Visualising the relationship
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/regression_analysis/regression-stargazer/" title="Professional outputs" class="dd-item ">
+        <a href="/regression_analysis/regression-stargazer/">
+        Professional outputs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/multivariate_regression/" title="Multivariate regression analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/multivariate_regression/">
+          <b>7. </b>Multivariate regression analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/multivariate_regression/prepare-data/" title="Prepare your variables" class="dd-item ">
+        <a href="/multivariate_regression/prepare-data/">
+        Prepare your variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/multivariate_regression/models/" title="The model" class="dd-item ">
+        <a href="/multivariate_regression/models/">
+        The model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/binary_regression/" title="Binary regression analysis" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/binary_regression/">
+          <b>8. </b>Binary regression analysis
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/binary_regression/prepare-data_binary/" title="Prepare your dataset" class="dd-item ">
+        <a href="/binary_regression/prepare-data_binary/">
+        Prepare your dataset
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/binary_regression/prepare-dependent_variable/" title="Create your dependent variable" class="dd-item ">
+        <a href="/binary_regression/prepare-dependent_variable/">
+        Create your dependent variable
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/binary_regression/models/" title="The logistic regression model" class="dd-item ">
+        <a href="/binary_regression/models/">
+        The logistic regression model
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/binary_regression/predicted_probabilities/" title="Predicted probabilities" class="dd-item ">
+        <a href="/binary_regression/predicted_probabilities/">
+        Predicted probabilities
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/interaction_term/" title="Interaction Terms" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/interaction_term/">
+          <b>9. </b>Interaction Terms
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/interaction_term/prepare-data_interaction/" title="Prepare your variables" class="dd-item ">
+        <a href="/interaction_term/prepare-data_interaction/">
+        Prepare your variables
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/interaction_term/prepare-interaction_term/" title="Construct and plot your interaction term" class="dd-item ">
+        <a href="/interaction_term/prepare-interaction_term/">
+        Construct and plot your interaction term
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="/about"><i class='fas fa-fw fa-bullhorn'></i> Additional Resources</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/matcornic/hugo-theme-learn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='' href="https://github.com/roulanezi/POL2028Descriptive_Statistics/load.data/_index.en.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text"></span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Introduction to Quantitative Research Methods</a> > <a href='/descriptive_statistics/'>Measures of central tendency</a> > Load data in RStudio
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Load data in RStudio
+            </h1>
+          
+
+        
+
+
+
+
+	<!-- raw HTML omitted -->
+<pre><code class="language-{r" data-lang="{r">load(&quot;EVS_UK.RData&quot;)
+</code></pre><p>In SurreyLearn you will find the codebook and the questionnaire of the dataset. Codebooks provide a detailed description of the dataset, such as the name and the code for each variable.</p>
+<p>To upload a dataset that is not stored in R's native file format we will need to install an additional package.
+R packages are like apps, we install them in order to use additional features available in R. To load packages that are foreign to R's native language we should use a package called <code>haven()</code>. To do so we use the function called <code>install.packages()</code>. In the brackets we include the name of the package we would like to install in quotation marks(&rdquo; &ldquo;).</p>
+<p>To do so we type: <code>install.packages(&quot;haven&quot;)</code></p>
+<p>Once the package is installed we may ask RStudio to use it by calling the function <code>library()</code>. For example, in order to use the haven package we type <code>library(haven)</code>.</p>
+<pre><code class="language-{r}" data-lang="{r}">library(haven)
+</code></pre><p>Alternatively, you may install any package you need by clicking on the Packages tab in the bottom right pane and then click install. A dialog box will appear. In the install Packages dialog write the name of the package you want to install and click install. This will install the package you are looking for.</p>
+<p><img src="Figure_36.PNG" alt="Install packages"></p>
+<!-- raw HTML omitted -->
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/descriptive_statistics/find.data/" title="Where to find data"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/descriptive_statistics/explore/" title="Explore your dataset" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1578853153"></script>
+    <script src="/js/perfect-scrollbar.min.js?1578853153"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1578853153"></script>
+    <script src="/js/jquery.sticky.js?1578853153"></script>
+    <script src="/js/featherlight.min.js?1578853153"></script>
+    <script src="/js/highlight.pack.js?1578853153"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1578853153"></script>
+    <script src="/js/learn.js?1578853153"></script>
+    <script src="/js/hugo-learn.js?1578853153"></script>
+
+    <link href="/mermaid/mermaid.css?1578853153" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1578853153"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
